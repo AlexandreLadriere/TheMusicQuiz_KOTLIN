@@ -12,9 +12,19 @@ There are different questions types in the quiz, which are all about albums:
 
 In addition to these question types, you have the option __Discover__: question are replaced by information about an album. It is a good way to learn about available albums in the database.
 
-
 ## Database
 The database is build from different albums charts you can find on the internet (like on [Rate Your Music]) thanks to a python script. This python script is also scraping information from [Wikipedia], and translating them in english if needed thanks to [Deepl].
+
+## Test (Ubuntu)
+First, you need to compile all the files thanks to the [compile.sh] file: 
+```sh
+$ sh compile.sh
+```
+
+Then, to run the application, you just have to run the [run.sh] file:
+```sh
+$ sh run.sh
+```
 
 ## Developed with
   - Ubuntu 18.04.2 LTS
@@ -36,7 +46,8 @@ This project is licensed under the MIT License - see the [LICENSE.md] file for d
 
 
 
-
+   [compile.sh]: <compile.sh>
+   [run.sh]: <run.sh>
    [LICENSE.md]: <LICENSE.md>
    [Rate Your Music]: <https://rateyourmusic.com/>
    [Wikipedia]: <https://www.wikipedia.org/>
