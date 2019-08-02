@@ -29,7 +29,7 @@ $ sh run.sh
 ## Developed with
   - Ubuntu 18.04.2 LTS
   - Kotlin version 1.3.41-release-150 (JRE 12.0.2+10)
-  - java 12.0.2 2019-07-16
+  - Java 12.0.2 2019-07-16
   - Java(TM) SE Runtime Environment (build 12.0.2+10)
   - Java HotSpot(TM) 64-Bit Server VM (build 12.0.2+10, mixed mode, sharing)
 

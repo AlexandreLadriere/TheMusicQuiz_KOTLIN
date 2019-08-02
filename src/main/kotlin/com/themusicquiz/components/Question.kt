@@ -2,7 +2,7 @@
  * @Author: Alexandre Ladrière 
  * @Date: 2019-08-01 10:30:34 
  * @Last Modified by: Alexandre Ladrière
- * @Last Modified time: 2019-08-01 19:32:39
+ * @Last Modified time: 2019-08-01 21:23:50
  */
 package com.themusicquiz.components;
 
@@ -35,7 +35,7 @@ class Question(_questionType: QuestionTypes, _questionItem: Item, private val qu
     var questionIsCorrect: Boolean = false
         get() = field
 
-    var questionOptions: MutableList<Item> = mutableListOf<Item>()
+    val questionOptions: MutableList<Item> = mutableListOf<Item>()
         get() = field
 
     init {

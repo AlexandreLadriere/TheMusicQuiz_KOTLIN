@@ -2,7 +2,7 @@
  * @Author: Alexandre Ladrière 
  * @Date: 2019-07-31 15:42:30 
  * @Last Modified by: Alexandre Ladrière
- * @Last Modified time: 2019-08-01 19:33:02
+ * @Last Modified time: 2019-08-02 16:37:26
  */
 package com.themusicquiz.components;
 
@@ -28,4 +28,12 @@ fun main() {
     println(questionTest.checkAnswer("Sch"));
     println(questionTest.questionOptions);
     println(questionTest.questionCorrectAnswer);
+    println(getParentFromString("/../resources/DB/test.txt"))
+
+    val itemListTest: MutableList<Item> = FileHandler.Companion.getItemListFromDB("/../resources/DB/hiphop/US_hiphop/US_hiphop.txt")
+    //println(itemListTest)
+    val questionSerieTest: QuestionSerie = QuestionSerie("/../resources/DB/hiphop/US_hiphop/US_hiphop.txt", QuestionTypes.RANDOM);
+    for(i in 0..NUMBER_OF_QUESTIONS-1) {
+        println(questionSerieTest.questionsList.get(i).askQuestion());
+    }
 }
