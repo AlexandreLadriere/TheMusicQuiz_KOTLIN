@@ -2,7 +2,7 @@
  * @Author: Alexandre Ladrière 
  * @Date: 2019-08-02 12:10:14 
  * @Last Modified by: Alexandre Ladrière
- * @Last Modified time: 2019-08-02 16:24:14
+ * @Last Modified time: 2019-08-03 11:53:05
  */
 package com.themusicquiz.components;
 
@@ -10,34 +10,38 @@ import com.themusicquiz.utils.*;
 import com.themusicquiz.enumerations.QuestionTypes;
 
 class QuestionSerie(val pDBPath: String = "", val questionType: QuestionTypes = QuestionTypes.UNDEFINED) {
-    var correctAnswerTotal: Int = 0
-        get(): Int {this.calculateCorrectAnswerTotal(); return field}
-
-    var averageTime: Float = 0F //in ms
-        get(): Float {this.calculateAverageTime(); return field}
-
+    
     var questionsList: MutableList<Question> = mutableListOf<Question>();
     var itemList: MutableList<Item> = mutableListOf<Item>();
-
-    private fun calculateCorrectAnswerTotal(): Unit {
-        this.correctAnswerTotal = 0;
-        for(question in this.questionsList) {
-            if(question.questionIsCorrect) {
-                this.correctAnswerTotal += 1;
-            }
-        }
-    }
 
     init {
         this.buildLists();
     }
 
-    private fun calculateAverageTime(): Unit {
-        this.averageTime = 0F;
+    public fun calculateTotalScore(): Int  {
+        var tmpTotalScore: Int = 0;
         for(question in this.questionsList) {
-            this.averageTime += question.questionTime.toFloat();
+            tmpTotalScore += question.questionScore;
         }
-        this.averageTime = this.averageTime/NUMBER_OF_QUESTIONS;
+        return tmpTotalScore;
+    }
+
+    public fun calculateCorrectAnswerTotal(): Int {
+        var tmpCorrectAnswerTotal = 0;
+        for(i in 0..this.questionsList.count()-1) {
+            if(this.questionsList.get(i).questionIsCorrect) {
+                tmpCorrectAnswerTotal += 1;
+            }
+        }
+        return tmpCorrectAnswerTotal;
+    }
+
+    public fun calculateAverageTime(): Float {
+        var tmpAverageTime = 0F;
+        for(question in this.questionsList) {
+            tmpAverageTime += question.questionTime.toFloat();
+        }
+        return tmpAverageTime/NUMBER_OF_QUESTIONS;
     }
 
     private fun buildLists(): Unit {

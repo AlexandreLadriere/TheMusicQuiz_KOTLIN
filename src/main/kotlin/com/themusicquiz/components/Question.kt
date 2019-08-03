@@ -2,7 +2,7 @@
  * @Author: Alexandre Ladrière 
  * @Date: 2019-08-01 10:30:34 
  * @Last Modified by: Alexandre Ladrière
- * @Last Modified time: 2019-08-01 21:23:50
+ * @Last Modified time: 2019-08-03 08:59:16
  */
 package com.themusicquiz.components;
 
@@ -85,6 +85,7 @@ class Question(_questionType: QuestionTypes, _questionItem: Item, private val qu
         QuestionTypes.WHO -> "Who released \""+questionItem.itemTitle+"\" in "+questionItem.itemDate+" ?"
         QuestionTypes.WHICH_ONE -> "What is the name of the album released by "+questionItem.itemAuthor+" in "+questionItem.itemDate+" ?"
         QuestionTypes.COVER -> "Who released this album and when ?"
+        QuestionTypes.DISCOVER -> "\""+ questionItem.itemTitle +"\" was released by "+questionItem.itemAuthor+" in "+questionItem.itemDate
         else -> "Unknown question"
     }
 }
